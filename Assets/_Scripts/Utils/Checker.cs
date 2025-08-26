@@ -22,6 +22,8 @@ public class Checker : MonoBehaviour
             string deviceName = XRSettings.loadedDeviceName.ToLower();
             Debug.Log("XR Device: " + deviceName);
 
+            // Set the initial orientation
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
             CurrentPlatform = PlayerPlatform.VR;
             Debug.Log("Detected VR via OpenXR");
             return;
