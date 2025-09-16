@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1f655126a81fb4f9ab5da3e7223d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sigilTag: Sigils
   memoryEffectPrefab: {fileID: 0}
 --- !u!114 &7443377855679682328
 MonoBehaviour:
@@ -393,8 +394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0d9743d0e27e9498623b55d8b75e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sigilPrefab: {fileID: 6445321647164248981, guid: 1d76ae09b4954ec4286664ad57e013e8,
+  sigilPrefab: {fileID: 1881274040743212692, guid: 98b33d3e52f11604b9280e219d6bddce,
     type: 3}
+  planeManager: {fileID: 5508384307311523124}
+  mainCamera: {fileID: 0}
+  sigilsPerPlane: 5
 --- !u!1 &6970362531645726972
 GameObject:
   m_ObjectHideFlags: 0

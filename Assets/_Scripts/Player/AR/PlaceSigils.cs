@@ -6,6 +6,7 @@ public class PlaceSigils : MonoBehaviour
 {
     public GameObject sigilPrefab;
     public ARPlaneManager planeManager;
+    public Camera mainCamera;
 
     [Range(1, 20)]
     public int sigilsPerPlane = 5; // how many sigils to spawn
@@ -13,6 +14,7 @@ public class PlaceSigils : MonoBehaviour
     void Start()
     {
         if (!planeManager) planeManager = FindFirstObjectByType<ARPlaneManager>();
+        if (!mainCamera) mainCamera = Camera.main;
     }
 
     // -------------------------------
@@ -111,7 +113,9 @@ public class PlaceSigils : MonoBehaviour
             // convert local plane coords → world space
             Vector3 randomPoint3D = plane.transform.TransformPoint(new Vector3(randomPoint2D.x, 0, randomPoint2D.y));
 
-            Instantiate(sigilPrefab, randomPoint3D, Quaternion.identity);
+            GameObject tempSigil = Instantiate(sigilPrefab, randomPoint3D, Quaternion.identity);
+
+            Debug.Log($"{tempSigil.transform.position}, {tempSigil.transform.rotation}, {tempSigil.transform.localScale}");
         }
     }
 }
